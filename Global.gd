@@ -37,3 +37,6 @@ func direction_to_delta(direction: String) -> Vector2i:
 		return Vector2i(-1, 0)
 	
 	return Vector2i(1, 0)
+
+func to_str(f: float):
+	return "%.2f" % f

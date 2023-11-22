@@ -13,124 +13,11 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -24.249
 
-[node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label")]
+[node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label", "ui")]
 script = ExtResource("1_6ghmn")
 audio_player = NodePath("../AudioStreamPlayer")
 song_delay_label = NodePath("../UI/HBoxContainer/Right/SongDelay/MusicDelay")
-
-[node name="simple" parent="Levels" instance=ExtResource("1_012u4")]
-visible = false
-
-[node name="tile_0" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-320, 128)
-
-[node name="tile_1" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-288, 128)
-time = 0.371012
-
-[node name="tile_2" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-288, 96)
-time = 0.731709
-
-[node name="tile_3" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-256, 96)
-time = 1.09761
-
-[node name="tile_4" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-256, 64)
-time = 1.46797
-
-[node name="tile_5" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-224, 64)
-time = 1.83005
-
-[node name="tile_6" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-224, 32)
-time = 2.21337
-
-[node name="tile_7" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-192, 32)
-time = 2.57004
-
-[node name="tile_8" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-192, 64)
-time = 3.58297
-
-[node name="tile_9" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-160, 64)
-time = 3.9112
-
-[node name="tile_10" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-160, 96)
-time = 4.26331
-
-[node name="tile_11" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-128, 96)
-time = 4.61065
-
-[node name="tile_12" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-128, 128)
-time = 4.96517
-
-[node name="tile_13" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-96, 128)
-time = 5.29437
-
-[node name="tile_14" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-96, 160)
-time = 5.62196
-
-[node name="tile_15" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-64, 160)
-time = 5.93516
-
-[node name="tile_16" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-64, 128)
-time = 7.31074
-
-[node name="tile_17" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-64, 96)
-time = 7.58514
-
-[node name="tile_18" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-64, 64)
-time = 7.84433
-
-[node name="tile_19" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(-32, 64)
-time = 8.46343
-
-[node name="tile_20" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(0, 64)
-time = 8.70817
-
-[node name="tile_21" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(32, 64)
-time = 8.93872
-
-[node name="tile_22" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(32, 96)
-time = 9.56275
-
-[node name="tile_23" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(32, 128)
-time = 9.805
-
-[node name="tile_24" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(32, 160)
-time = 10.0513
-
-[node name="tile_25" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(64, 160)
-time = 10.5672
-
-[node name="tile_26" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(96, 160)
-time = 10.806
-
-[node name="tile_27" parent="Levels/simple" instance=ExtResource("3_ihupg")]
-position = Vector2(128, 160)
-time = 11.0333
+ui = NodePath("../UI")
 
 [node name="camptown_races" parent="Levels" instance=ExtResource("1_012u4")]
 active = true
@@ -418,6 +305,13 @@ level = NodePath("../Levels/camptown_races")
 okStepsLabel = NodePath("../UI/HBoxContainer/Right/StepsOkRow/OkStepsValue")
 errorStepsLabel = NodePath("../UI/HBoxContainer/Right/StepsErrorRow/ErrorStepsValue")
 
+[node name="Preview" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.882353, 0.419608, 0.639216)
+position = Vector2(-250, 58)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_isybe")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UI" type="Control" parent="."]
@@ -500,6 +394,7 @@ theme = ExtResource("6_wp86i")
 text = "8.25"
 
 [node name="PanelContainer" type="PanelContainer" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -514,4 +409,4 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("6_wp86i")
 theme_override_font_sizes/font_size = 60
-text = "3.0"
+text = "3.00"

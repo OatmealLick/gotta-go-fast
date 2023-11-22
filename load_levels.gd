@@ -11,11 +11,9 @@ func _run():
 		return
 	
 	var levels: Node2D = get_scene().get_node("Levels")
-	var player: Player = get_scene().get_node("Player")
-#	_add_to_levels("simple", levels, player)
-	_add_to_levels("camptown_races", levels, player)
+	_add_to_levels("camptown_races", levels)
 	
-func _add_to_levels(level: String, levels: Node2D, player: Player):
+func _add_to_levels(level: String, levels: Node2D):
 	var start_pos := Vector2i(-10, 5)
 	
 	# remove current level if exists
@@ -25,7 +23,7 @@ func _add_to_levels(level: String, levels: Node2D, player: Player):
 		old_level_node.queue_free()
 		
 	# add new level node
-	var new_level_node = LevelScene.instantiate()
+	var new_level_node: Level = LevelScene.instantiate()
 	new_level_node.name = level
 	levels.add_child(new_level_node)
 	new_level_node.set_owner(get_scene())

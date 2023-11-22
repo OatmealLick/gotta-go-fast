@@ -13,8 +13,9 @@ func show_starting_panel(duration_seconds: float):
 	timer = 0.0
 	duration = duration_seconds
 	active = true
-	timer_label.text = str(duration)
+	timer_label.text = Global.to_str(duration)
 	panel.visible = true
+
 
 func hide_starting_panel():
 	active = false
@@ -29,4 +30,4 @@ func _process(delta):
 	if timer >= duration:
 		hide_starting_panel()
 		
-	timer_label.text = str(timer)
+	timer_label.text = Global.to_str(duration - timer)

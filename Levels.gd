@@ -9,15 +9,20 @@ extends Node2D
 var music0 : AudioStream = preload("res://camptown_races_cut1.ogg")
 
 func _ready():
-	pass
+	audio_player.stream = music0
 
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_action_just_pressed("StartPreview"):
 		var delay = 8.25 
 		if song_delay_label:
 			delay = float(song_delay_label.text)
+		
+		var starting_panel_delay = 3.0
+		audio_player.play(delay - starting_panel_delay)
+		
+		ui.show_starting_panel(starting_panel_delay)
+		await get_tree().create_timer(starting_panel_delay).timeout
 			
-		level0.toggle_preview()
-		audio_player.stream = music0
-		audio_player.play(delay)
+		level0.start_preview()
+		

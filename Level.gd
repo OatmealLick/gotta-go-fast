@@ -6,8 +6,9 @@ class_name Level
 
 var tiles: Dictionary = {}
 var ordered_tiles: Array = []
+@onready var preview_node: Node2D = $"../../Preview"
 
-var is_previewing := false
+var previewing := false
 var previewing_timer := 0.0
 var current_preview_index := 0
 
@@ -32,23 +33,24 @@ func _process(delta):
 		for c in get_children():
 			(c as Tile).stop()
 		
-	if is_previewing:
+	if previewing:
 		if current_preview_index >= ordered_tiles.size():
-			is_previewing = false
+			previewing = false
 			return
 		
 		previewing_timer += delta
 		var current_tile = ordered_tiles[current_preview_index]
-		var previous_tile = null if current_preview_index == 0 else ordered_tiles[current_preview_index - 1]
 		
 		if previewing_timer >= current_tile.time:
-			if previous_tile:
-				previous_tile.tile.modulate = Global.DEFAULT_TILE_COLOR
-				
-			current_tile.tile.modulate = Color(1, 1, 1)
+			preview_node.position = current_tile.tile.position
 			current_preview_index += 1
 	
-func toggle_preview():
-	is_previewing = true
+func start_preview():
+	previewing = true
 	previewing_timer = 0.0
 	current_preview_index = 0
+	preview_node.visible = true
+	
+func stop_preview():
+	previewing = false
+	preview_node.visible = false
