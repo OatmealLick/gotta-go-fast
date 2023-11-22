@@ -26,12 +26,7 @@ func _process(delta):
 	if not active:
 		return
 		
-	if Input.is_key_pressed(KEY_O):
-		for c in get_children():
-			(c as Tile).start()
-	if Input.is_key_pressed(KEY_P):
-		for c in get_children():
-			(c as Tile).stop()
+		
 		
 	if previewing:
 		if current_preview_index >= ordered_tiles.size():
@@ -54,3 +49,12 @@ func start_preview():
 func stop_preview():
 	previewing = false
 	preview_node.visible = false
+	
+func start():
+	for c in get_children():
+		(c as Tile).start()
+		
+func stop():
+	for c in get_children():
+		(c as Tile).stop()
+	
