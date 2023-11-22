@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy6kq5rbcb2rj"]
+
+[ext_resource type="Texture2D" uid="uid://b7s0jlebbnbu0" path="res://white.png" id="1_7rfe6"]
+[ext_resource type="Script" path="res://Tile.gd" id="2_dtmk8"]
+
+[node name="Tile" type="Sprite2D"]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+texture = ExtResource("1_7rfe6")
+script = ExtResource("2_dtmk8")

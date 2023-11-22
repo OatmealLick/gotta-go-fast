@@ -1,0 +1,517 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq1wx5lm8nabk"]
+
+[ext_resource type="Script" path="res://Levels.gd" id="1_6ghmn"]
+[ext_resource type="PackedScene" uid="uid://cupixbt4lim0" path="res://level.tscn" id="1_012u4"]
+[ext_resource type="Texture2D" uid="uid://b7s0jlebbnbu0" path="res://white.png" id="1_isybe"]
+[ext_resource type="Script" path="res://Player.gd" id="2_k6lru"]
+[ext_resource type="PackedScene" uid="uid://cy6kq5rbcb2rj" path="res://tile.tscn" id="3_ihupg"]
+[ext_resource type="Script" path="res://Ui.gd" id="6_2m2xe"]
+[ext_resource type="Theme" uid="uid://bwgtaob7copfl" path="res://DefaultTheme.tres" id="6_wp86i"]
+
+[node name="Game" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -24.249
+
+[node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label")]
+script = ExtResource("1_6ghmn")
+audio_player = NodePath("../AudioStreamPlayer")
+song_delay_label = NodePath("../UI/HBoxContainer/Right/SongDelay/MusicDelay")
+
+[node name="simple" parent="Levels" instance=ExtResource("1_012u4")]
+visible = false
+
+[node name="tile_0" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-320, 128)
+
+[node name="tile_1" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-288, 128)
+time = 0.371012
+
+[node name="tile_2" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-288, 96)
+time = 0.731709
+
+[node name="tile_3" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, 96)
+time = 1.09761
+
+[node name="tile_4" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, 64)
+time = 1.46797
+
+[node name="tile_5" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, 64)
+time = 1.83005
+
+[node name="tile_6" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, 32)
+time = 2.21337
+
+[node name="tile_7" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, 32)
+time = 2.57004
+
+[node name="tile_8" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, 64)
+time = 3.58297
+
+[node name="tile_9" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 64)
+time = 3.9112
+
+[node name="tile_10" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 96)
+time = 4.26331
+
+[node name="tile_11" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 96)
+time = 4.61065
+
+[node name="tile_12" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 128)
+time = 4.96517
+
+[node name="tile_13" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-96, 128)
+time = 5.29437
+
+[node name="tile_14" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-96, 160)
+time = 5.62196
+
+[node name="tile_15" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 160)
+time = 5.93516
+
+[node name="tile_16" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 128)
+time = 7.31074
+
+[node name="tile_17" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 96)
+time = 7.58514
+
+[node name="tile_18" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 64)
+time = 7.84433
+
+[node name="tile_19" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, 64)
+time = 8.46343
+
+[node name="tile_20" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(0, 64)
+time = 8.70817
+
+[node name="tile_21" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(32, 64)
+time = 8.93872
+
+[node name="tile_22" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(32, 96)
+time = 9.56275
+
+[node name="tile_23" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(32, 128)
+time = 9.805
+
+[node name="tile_24" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(32, 160)
+time = 10.0513
+
+[node name="tile_25" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(64, 160)
+time = 10.5672
+
+[node name="tile_26" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(96, 160)
+time = 10.806
+
+[node name="tile_27" parent="Levels/simple" instance=ExtResource("3_ihupg")]
+position = Vector2(128, 160)
+time = 11.0333
+
+[node name="camptown_races" parent="Levels" instance=ExtResource("1_012u4")]
+active = true
+
+[node name="tile_0" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-320, 128)
+
+[node name="tile_1" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-320, 96)
+time = 0.264206
+
+[node name="tile_2" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-288, 96)
+time = 0.551894
+
+[node name="tile_3" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-288, 64)
+time = 0.808151
+
+[node name="tile_4" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, 64)
+time = 1.0876
+
+[node name="tile_5" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, 64)
+time = 1.33603
+
+[node name="tile_6" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, 32)
+time = 1.56002
+
+[node name="tile_7" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, 32)
+time = 1.80021
+
+[node name="tile_8" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, 0)
+time = 2.32024
+
+[node name="tile_9" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, 0)
+time = 2.59221
+
+[node name="tile_10" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -32)
+time = 3.36787
+
+[node name="tile_11" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, -32)
+time = 3.60826
+
+[node name="tile_12" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, -64)
+time = 4.18404
+
+[node name="tile_13" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -64)
+time = 4.38433
+
+[node name="tile_14" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, -64)
+time = 4.65582
+
+[node name="tile_15" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, -96)
+time = 4.91166
+
+[node name="tile_16" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -96)
+time = 5.18391
+
+[node name="tile_17" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -128)
+time = 5.42413
+
+[node name="tile_18" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -160)
+time = 5.67184
+
+[node name="tile_19" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -192)
+time = 5.94391
+
+[node name="tile_20" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, -192)
+time = 6.45568
+
+[node name="tile_21" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, -224)
+time = 7.00821
+
+[node name="tile_22" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-256, -256)
+time = 7.25592
+
+[node name="tile_23" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-224, -256)
+time = 7.52817
+
+[node name="tile_24" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, -256)
+time = 8.24771
+
+[node name="tile_25" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-192, -224)
+time = 8.51996
+
+[node name="tile_26" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, -224)
+time = 8.79179
+
+[node name="tile_27" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, -224)
+time = 9.04002
+
+[node name="tile_28" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, -256)
+time = 9.29656
+
+[node name="tile_29" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-96, -256)
+time = 9.51976
+
+[node name="tile_30" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-96, -224)
+time = 9.79252
+
+[node name="tile_31" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, -224)
+time = 10.0644
+
+[node name="tile_32" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, -192)
+time = 10.5918
+
+[node name="tile_33" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, -192)
+time = 10.8164
+
+[node name="tile_34" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, -160)
+time = 11.6481
+
+[node name="tile_35" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(0, -160)
+time = 11.8643
+
+[node name="tile_36" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(32, -160)
+time = 12.3765
+
+[node name="tile_37" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(32, -128)
+time = 12.6638
+
+[node name="tile_38" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(64, -128)
+time = 12.9045
+
+[node name="tile_39" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(64, -96)
+time = 13.1997
+
+[node name="tile_40" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(64, -64)
+time = 13.4325
+
+[node name="tile_41" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(32, -64)
+time = 13.6959
+
+[node name="tile_42" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(32, -32)
+time = 13.9445
+
+[node name="tile_43" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(0, -32)
+time = 14.3203
+
+[node name="tile_44" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(0, -64)
+time = 14.8003
+
+[node name="tile_45" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, -64)
+time = 15.248
+
+[node name="tile_46" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, -64)
+time = 15.5356
+
+[node name="tile_47" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, -32)
+time = 15.7684
+
+[node name="tile_48" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 0)
+time = 16.8004
+
+[node name="tile_49" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, 0)
+time = 17.3285
+
+[node name="tile_50" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, 32)
+time = 17.4724
+
+[node name="tile_51" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(0, 32)
+time = 17.8726
+
+[node name="tile_52" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(0, 64)
+time = 18.9046
+
+[node name="tile_53" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, 64)
+time = 19.448
+
+[node name="tile_54" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-32, 96)
+time = 19.5686
+
+[node name="tile_55" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 96)
+time = 20.024
+
+[node name="tile_56" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-64, 128)
+time = 20.7444
+
+[node name="tile_57" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-96, 128)
+time = 21.0082
+
+[node name="tile_58" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 128)
+time = 21.2646
+
+[node name="tile_59" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 96)
+time = 21.5124
+
+[node name="tile_60" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 96)
+time = 21.7843
+
+[node name="tile_61" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 64)
+time = 22.0645
+
+[node name="tile_62" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 32)
+time = 22.3203
+
+[node name="tile_63" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 32)
+time = 22.5762
+
+[node name="tile_64" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, 0)
+time = 23.0957
+
+[node name="tile_65" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, 0)
+time = 23.6081
+
+[node name="tile_66" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-160, -32)
+time = 23.8399
+
+[node name="tile_67" parent="Levels/camptown_races" instance=ExtResource("3_ihupg")]
+position = Vector2(-128, -32)
+time = 24.152
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("level", "okStepsLabel", "errorStepsLabel")]
+z_index = 1
+position = Vector2(-320, 160)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_isybe")
+script = ExtResource("2_k6lru")
+level = NodePath("../Levels/camptown_races")
+okStepsLabel = NodePath("../UI/HBoxContainer/Right/StepsOkRow/OkStepsValue")
+errorStepsLabel = NodePath("../UI/HBoxContainer/Right/StepsErrorRow/ErrorStepsValue")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_2m2xe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Middle" type="VBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Right" type="VBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keybindings" type="HBoxContainer" parent="UI/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Right/Keybindings"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "SPACE - preview
+O - start
+P - pause"
+
+[node name="StepsOkRow" type="HBoxContainer" parent="UI/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Right/StepsOkRow"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "Steps OK: "
+
+[node name="OkStepsValue" type="Label" parent="UI/HBoxContainer/Right/StepsOkRow"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "0"
+
+[node name="StepsErrorRow" type="HBoxContainer" parent="UI/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Right/StepsErrorRow"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "Steps ERROR: "
+
+[node name="ErrorStepsValue" type="Label" parent="UI/HBoxContainer/Right/StepsErrorRow"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "0"
+
+[node name="SongDelay" type="HBoxContainer" parent="UI/HBoxContainer/Right"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HBoxContainer/Right/SongDelay"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "Music delay: "
+
+[node name="MusicDelay" type="LineEdit" parent="UI/HBoxContainer/Right/SongDelay"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+text = "8.25"
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("6_wp86i")
+theme_override_font_sizes/font_size = 60
+text = "3.0"
