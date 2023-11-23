@@ -16,6 +16,9 @@ var original_position: Vector2
 
 signal made_deadly(grid_pos)
 
+@export var deadly_duration := 0.0
+@export var idle_duration := 0.0
+@export var idle_anti_duration := 0.0
 
 func start():
 	is_playing = true
@@ -30,6 +33,9 @@ func _ready():
 	timeAdjusted = Global.Period - float((int(1000*time) % int(1000*Global.Period)) / 1000.0) 
 	timer = timeAdjusted
 #	_set_state_based_on_timer()
+	idle_duration = time_tile_next
+	idle_anti_duration = idle_duration + Global.AnticipationDuration
+	deadly_duration = Global.Period - idle_anti_duration
 	
 	
 func _process(delta):
@@ -44,11 +50,11 @@ func _process(delta):
 
 
 func _set_state_based_on_timer():
-	if timer < Global.FreezoneDurationHalf and state == DEADLY:
+	if timer < idle_duration and state == DEADLY:
 		_set_idle()
-	elif Global.FreezoneDurationHalf <= timer and timer < 2 * Global.FreezoneDurationHalf and state == IDLE:
+	elif idle_duration <= timer and timer < idle_anti_duration and state == IDLE:
 		_set_anticipating()
-	elif timer >= 2 * Global.FreezoneDurationHalf and state == ANTICIPATING:
+	elif timer >= idle_anti_duration and state == ANTICIPATING:
 		_set_deadly()
 	
 	

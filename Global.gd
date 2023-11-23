@@ -12,10 +12,10 @@ const FreezoneDurationHalf := 0.3
 # in seconds
 const DeadlyDuration := 2.0
 # time for full cycle (idle, anticipating, deadly)
-const Period := FreezoneDurationHalf * 2 + DeadlyDuration
+#const Period := FreezoneDurationHalf * 2 + DeadlyDuration
 
 const AnticipationDuration := 0.3
-#const Period := 2.5
+const Period := 2.5
 
 
 const DEFAULT_TILE_COLOR = Color("d288d2")
@@ -44,3 +44,6 @@ func direction_to_delta(direction: String) -> Vector2i:
 
 func to_str(f: float):
 	return "%.2f" % f
+
+func modulo_period(v: float):
+	return float((int(1000*v) % int(1000*Global.Period)) / 1000.0) 
