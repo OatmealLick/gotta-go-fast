@@ -3,16 +3,20 @@ extends Node
 const Scale = 32
 const Eps = 0.001
 
-const TileDelay := 1.0
+const TileDelay := 1.0 # unused
 
 # in seconds, time window before (or after) the optimal time for player step
 # this times 2 gives total duration that is safe for player
 # use this to tweak difficulty
-const FreezoneDurationHalf := 0.8
+const FreezoneDurationHalf := 0.3
 # in seconds
-const DeadlyDuration := 1.0
+const DeadlyDuration := 2.0
 # time for full cycle (idle, anticipating, deadly)
 const Period := FreezoneDurationHalf * 2 + DeadlyDuration
+
+const AnticipationDuration := 0.3
+#const Period := 2.5
+
 
 const DEFAULT_TILE_COLOR = Color("d288d2")
 const ANTICIPATING_TILE_COLOR = Color("8183e1")

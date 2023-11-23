@@ -1,7 +1,7 @@
 extends Node2D
 
 # todo replace with dynamic children iteration I guess?
-@onready var level0: Level = $"camptown_races"
+@onready var level0: Level
 @export var audio_player: AudioStreamPlayer
 @export var song_delay_label: LineEdit
 @export var ui: UserInterface
@@ -11,6 +11,7 @@ var starting_panel_delay = 3.0
 
 func _ready():
 	audio_player.stream = music0
+	level0 = get_child(0) as Level
 
 
 func _process(delta):

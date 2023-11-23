@@ -11,7 +11,7 @@ var current_grid_pos := Vector2i(999999, 999999)
 
 func _ready():
 	for t in level.ordered_tiles:
-		t.tile.made_deadly.connect(_on_made_deadly)
+		t.made_deadly.connect(_on_made_deadly)
 
 	
 func _input(event):

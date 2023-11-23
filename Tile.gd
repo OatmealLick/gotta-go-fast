@@ -12,6 +12,7 @@ const DEADLY := 2
 @export var is_playing := false
 var original_position: Vector2
 @export var timeAdjusted: float
+@export var time_tile_next := -1.0
 
 signal made_deadly(grid_pos)
 
@@ -26,8 +27,8 @@ func _ready():
 	original_position = position
 	is_playing = false
 	
-	timeAdjusted = float((int(1000*time) % int(1000*Global.Period)) / 1000.0) 
-	timer = Global.Period - timeAdjusted
+	timeAdjusted = Global.Period - float((int(1000*time) % int(1000*Global.Period)) / 1000.0) 
+	timer = timeAdjusted
 #	_set_state_based_on_timer()
 	
 	
