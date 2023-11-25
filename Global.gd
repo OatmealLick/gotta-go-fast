@@ -1,5 +1,7 @@
 extends Node
 
+var current_level = 1
+
 const Scale = 32
 const Eps = 0.001
 
@@ -14,7 +16,7 @@ const DeadlyDuration := 2.0
 # time for full cycle (idle, anticipating, deadly)
 #const Period := FreezoneDurationHalf * 2 + DeadlyDuration
 
-const AnticipationDuration := 0.3
+const AnticipationDuration := 0.6
 const Period := 2.5
 
 

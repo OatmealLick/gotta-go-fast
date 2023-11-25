@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name Player
 
-
+var levels: Levels
 var level: Level
 var current_grid_pos := Vector2i(999999, 999999)
 
@@ -9,8 +9,13 @@ var current_grid_pos := Vector2i(999999, 999999)
 @export var errorStepsLabel: Label
 @export var active: bool = true
 
+var initial_position := Vector2i(-320, 160)
+
 func _ready():
-	level = get_node("/root/Game/Levels").get_child(0)
+	levels = get_node("/root/Game/Levels") as Levels
+	levels.level_selected.connect(_on_level_selected)
+	levels.level_started.connect(_on_level_started)
+	level = levels.get_child(Global.current_level)
 	for t in level.ordered_tiles:
 		t.made_deadly.connect(_on_made_deadly)
 
@@ -50,7 +55,23 @@ func _input(event):
 func _on_made_deadly(grid_pos):
 	if grid_pos == current_grid_pos:
 		_increment_step(errorStepsLabel)
+		
+func _on_level_selected():
+	for t in level.ordered_tiles:
+		t.made_deadly.disconnect(_on_made_deadly)
+	level = levels.get_child(Global.current_level)
+	for t in level.ordered_tiles:
+		t.made_deadly.connect(_on_made_deadly)
+	_set_step(okStepsLabel, 0)
+	_set_step(errorStepsLabel, 0)
+	position = initial_position
+
+func _on_level_started():
+	position = initial_position
 
 func _increment_step(label: Label):
 	var current = int(label.text)
 	label.text = str(current + 1)
+
+func _set_step(label: Label, value: int):
+	label.text = str(value)
