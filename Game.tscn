@@ -778,7 +778,6 @@ theme = ExtResource("6_wp86i")
 text = "0"
 
 [node name="SongDelay" type="HBoxContainer" parent="CanvasLayer/UI/HBoxContainer/Right"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/UI/HBoxContainer/Right/SongDelay"]

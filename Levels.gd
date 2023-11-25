@@ -26,6 +26,7 @@ func _ready():
 	audio_player.stream = music[Global.current_level]
 	for c in get_children():
 		levels.append(c)
+	song_delay_label.text = str(music_offsets[Global.current_level])
 
 
 func _process(delta):
@@ -54,6 +55,7 @@ func _process(delta):
 func _select_level(number: int):
 	Global.current_level = number
 	audio_player.stream = music[number]
+	song_delay_label.text = str(music_offsets[number])
 	for i in range(get_child_count()):
 		var level = get_child(i) as Level
 		if i == number:
