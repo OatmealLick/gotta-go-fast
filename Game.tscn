@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq1wx5lm8nabk"]
+[gd_scene load_steps=12 format=3 uid="uid://cq1wx5lm8nabk"]
 
 [ext_resource type="Script" path="res://Levels.gd" id="1_6ghmn"]
 [ext_resource type="PackedScene" uid="uid://cupixbt4lim0" path="res://level.tscn" id="1_012u4"]
@@ -7,17 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://cy6kq5rbcb2rj" path="res://tile.tscn" id="3_ihupg"]
 [ext_resource type="Script" path="res://Ui.gd" id="6_2m2xe"]
 [ext_resource type="Theme" uid="uid://bwgtaob7copfl" path="res://DefaultTheme.tres" id="6_wp86i"]
+[ext_resource type="Texture2D" uid="uid://chuq2sx65y21o" path="res://heart-outline.png" id="7_jt44a"]
+[ext_resource type="Texture2D" uid="uid://cg84qhc5fffon" path="res://overlay.png" id="8_eoq8e"]
+[ext_resource type="Script" path="res://DamageOverlay.gd" id="9_qtkkv"]
+[ext_resource type="Script" path="res://DeathOverlay.gd" id="11_da7pa"]
 
 [node name="Game" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -24.249
+volume_db = -24.0
 
-[node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label", "ui")]
+[node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label", "ui", "player")]
 script = ExtResource("1_6ghmn")
 audio_player = NodePath("../AudioStreamPlayer")
 song_delay_label = NodePath("../CanvasLayer/UI/HBoxContainer/Right/SongDelay/MusicOffset")
 ui = NodePath("../CanvasLayer/UI")
+player = NodePath("../Player")
 
 [node name="camptown_races_182904" parent="Levels" instance=ExtResource("1_012u4")]
 visible = false
@@ -710,7 +715,7 @@ texture = ExtResource("1_isybe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UI" type="Control" parent="CanvasLayer"]
+[node name="UI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("player", "levels")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -718,6 +723,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_2m2xe")
+player = NodePath("../../Player")
+levels = NodePath("../../Levels")
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI"]
@@ -731,6 +738,29 @@ grow_vertical = 2
 [node name="Left" type="VBoxContainer" parent="CanvasLayer/UI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/HBoxContainer/Left"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+
+[node name="Lives" type="Control" parent="CanvasLayer/UI/HBoxContainer/Left/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/UI/HBoxContainer/Left/MarginContainer/Lives"]
+layout_mode = 2
+offset_right = 333.0
+offset_bottom = 291.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jt44a")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/UI/HBoxContainer/Left/MarginContainer/Lives"]
+layout_mode = 2
+offset_left = 50.0
+offset_right = 383.0
+offset_bottom = 291.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_jt44a")
 
 [node name="Middle" type="VBoxContainer" parent="CanvasLayer/UI/HBoxContainer"]
 layout_mode = 2
@@ -807,3 +837,45 @@ layout_mode = 2
 theme = ExtResource("6_wp86i")
 theme_override_font_sizes/font_size = 60
 text = "3.00"
+
+[node name="DamageOverlay" type="NinePatchRect" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_eoq8e")
+region_rect = Rect2(0, 0, 1920, 1080)
+patch_margin_left = 384
+patch_margin_top = 324
+patch_margin_right = 384
+patch_margin_bottom = 324
+script = ExtResource("9_qtkkv")
+player = NodePath("../../Player")
+
+[node name="DeathOverlay" type="NinePatchRect" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_eoq8e")
+region_rect = Rect2(0, 0, 1920, 1080)
+patch_margin_left = 384
+patch_margin_top = 324
+patch_margin_right = 384
+patch_margin_bottom = 324
+script = ExtResource("11_da7pa")
+player = NodePath("../../Player")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DeathOverlay"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -11,7 +11,6 @@ const DEADLY := 2
 @export var timer := 0.0
 @export var is_playing := false
 var original_position: Vector2
-@export var timeAdjusted: float
 @export var time_tile_next := -1.0
 
 signal made_deadly(grid_pos)
@@ -19,6 +18,11 @@ signal made_deadly(grid_pos)
 @export var deadly_duration := 0.0
 @export var idle_duration := 0.0
 @export var idle_anti_duration := 0.0
+
+func reset():
+	_set_idle()
+	timer = Global.Period - float((int(1000*time) % int(1000*Global.Period)) / 1000.0) 
+	is_playing = false
 
 func start():
 	is_playing = true
@@ -30,9 +34,6 @@ func _ready():
 	original_position = position
 	is_playing = false
 	
-	timeAdjusted = Global.Period - float((int(1000*time) % int(1000*Global.Period)) / 1000.0) 
-	timer = timeAdjusted
-#	_set_state_based_on_timer()
 	idle_duration = time_tile_next
 	idle_anti_duration = idle_duration + Global.AnticipationDuration
 	deadly_duration = Global.Period - idle_anti_duration

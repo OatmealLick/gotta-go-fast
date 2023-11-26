@@ -45,6 +45,10 @@ func stop_preview():
 	previewing = false
 	preview_node.visible = false
 	
+func reset():
+	for c in get_children():
+		(c as Tile).reset()
+
 func start():
 	for c in get_children():
 		(c as Tile).start()

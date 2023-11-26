@@ -2,8 +2,16 @@ extends Node
 
 var current_level = 1
 
+const LivesNumberPerLevel = {
+	0: 5,
+	1: 3
+}
+
+
 const Scale = 32
 const Eps = 0.001
+const DeathTimer := 0.4
+const MusicVolume := -24.0
 
 const TileDelay := 1.0 # unused
 
