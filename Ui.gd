@@ -48,7 +48,7 @@ func hide_starting_panel():
 	panel.visible = false
 
 func set_lives_for_level():
-	set_lives(Global.LivesNumberPerLevel[Global.current_level])
+	set_lives(Global.LivesNumberPerLevel.get(Global.current_level, Global.DefaultLivesNumberPerLevel))
 
 func set_lives(number: int):
 	for c in lives_parent.get_children():

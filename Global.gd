@@ -1,7 +1,8 @@
 extends Node
 
-var current_level = 1
+var current_level = 3
 
+const DefaultLivesNumberPerLevel = 8
 const LivesNumberPerLevel = {
 	0: 5,
 	1: 3
@@ -27,6 +28,15 @@ const DeadlyDuration := 2.0
 const AnticipationDuration := 0.6
 const Period := 2.5
 
+#const starting_panel_delay = 1.0
+const MusicOffsets = {
+	0: 1.2,
+	1: 1.1,
+	2: 5.0
+}
+
+# used for making up for the delay while recording keys, and hitting key a bit later after the song hits
+const MusicMiniDelay := 0.05
 
 const DEFAULT_TILE_COLOR = Color("d288d2")
 const ANTICIPATING_TILE_COLOR = Color("8183e1")
@@ -53,7 +63,7 @@ func direction_to_delta(direction: String) -> Vector2i:
 	return Vector2i(1, 0)
 
 func to_str(f: float):
-	return "%.2f" % f
+	return "%.1f" % f
 
 func modulo_period(v: float):
 	return float((int(1000*v) % int(1000*Global.Period)) / 1000.0) 

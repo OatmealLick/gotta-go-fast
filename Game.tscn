@@ -1,21 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq1wx5lm8nabk"]
+[gd_scene load_steps=15 format=3 uid="uid://cq1wx5lm8nabk"]
 
 [ext_resource type="Script" path="res://Levels.gd" id="1_6ghmn"]
 [ext_resource type="PackedScene" uid="uid://cupixbt4lim0" path="res://level.tscn" id="1_012u4"]
 [ext_resource type="Texture2D" uid="uid://b7s0jlebbnbu0" path="res://white.png" id="1_isybe"]
 [ext_resource type="Script" path="res://Player.gd" id="2_k6lru"]
 [ext_resource type="PackedScene" uid="uid://cy6kq5rbcb2rj" path="res://tile.tscn" id="3_ihupg"]
+[ext_resource type="Script" path="res://Level.gd" id="4_f7e0d"]
 [ext_resource type="Script" path="res://Ui.gd" id="6_2m2xe"]
+[ext_resource type="Script" path="res://Tile.gd" id="6_bovkf"]
 [ext_resource type="Theme" uid="uid://bwgtaob7copfl" path="res://DefaultTheme.tres" id="6_wp86i"]
 [ext_resource type="Texture2D" uid="uid://chuq2sx65y21o" path="res://heart-outline.png" id="7_jt44a"]
 [ext_resource type="Texture2D" uid="uid://cg84qhc5fffon" path="res://overlay.png" id="8_eoq8e"]
 [ext_resource type="Script" path="res://DamageOverlay.gd" id="9_qtkkv"]
 [ext_resource type="Script" path="res://DeathOverlay.gd" id="11_da7pa"]
+[ext_resource type="Script" path="res://PlayerPreviewer.gd" id="14_l1ug0"]
 
 [node name="Game" type="Node"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -24.0
+volume_db = -14.0
 
 [node name="Levels" type="Node2D" parent="." node_paths=PackedStringArray("audio_player", "song_delay_label", "ui", "player")]
 script = ExtResource("1_6ghmn")
@@ -366,7 +369,7 @@ position = Vector2(-128, -32)
 time = 24.152
 
 [node name="comfort_fit_sorry_865796" parent="Levels" instance=ExtResource("1_012u4")]
-active = true
+visible = false
 
 [node name="tile_0" parent="Levels/comfort_fit_sorry_865796" instance=ExtResource("3_ihupg")]
 position = Vector2(-320, 128)
@@ -691,6 +694,1056 @@ time_tile_next = 0.600708
 position = Vector2(704, -896)
 time = 37.8747
 
+[node name="hours_gone_forever_107207" type="Node2D" parent="Levels" instance=ExtResource("1_012u4")]
+visible = false
+script = ExtResource("4_f7e0d")
+
+[node name="tile_0" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-320, 128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time_tile_next = 0.332405
+
+[node name="tile_1" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 0.332405
+time_tile_next = 0.369761
+
+[node name="tile_2" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 0.702166
+time_tile_next = 0.345081
+
+[node name="tile_3" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, 96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.04725
+time_tile_next = 0.36679
+
+[node name="tile_4" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, 64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.41404
+time_tile_next = 0.323109
+
+[node name="tile_5" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, 64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.73715
+time_tile_next = 0.331842
+
+[node name="tile_6" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 2.06899
+time_tile_next = 0.317158
+
+[node name="tile_7" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-192, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 2.38615
+time_tile_next = 0.335089
+
+[node name="tile_8" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-192, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 2.72123
+time_tile_next = 0.323075
+
+[node name="tile_9" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 3.04431
+time_tile_next = 0.344318
+
+[node name="tile_10" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 3.38863
+time_tile_next = 0.326995
+
+[node name="tile_11" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 3.71562
+time_tile_next = 0.330482
+
+[node name="tile_12" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 4.0461
+time_tile_next = 0.295036
+
+[node name="tile_13" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 4.34114
+time_tile_next = 0.355737
+
+[node name="tile_14" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 4.69688
+time_tile_next = 0.318496
+
+[node name="tile_15" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-64, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 5.01537
+time_tile_next = 0.395658
+
+[node name="tile_16" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-64, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 5.41103
+time_tile_next = 0.300941
+
+[node name="tile_17" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 5.71197
+time_tile_next = 0.324471
+
+[node name="tile_18" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 6.03644
+time_tile_next = 0.322643
+
+[node name="tile_19" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 6.35909
+time_tile_next = 0.353118
+
+[node name="tile_20" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 6.7122
+time_tile_next = 0.320776
+
+[node name="tile_21" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.03298
+time_tile_next = 0.363635
+
+[node name="tile_22" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.39662
+time_tile_next = 0.316327
+
+[node name="tile_23" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.71294
+time_tile_next = 0.363222
+
+[node name="tile_24" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -256)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 8.07616
+time_tile_next = 0.315901
+
+[node name="tile_25" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(96, -256)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 8.39207
+time_tile_next = 0.35327
+
+[node name="tile_26" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(96, -288)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 8.74534
+time_tile_next = 0.311444
+
+[node name="tile_27" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(128, -288)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 9.05678
+time_tile_next = 0.341409
+
+[node name="tile_28" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(128, -320)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 9.39819
+time_tile_next = 0.336066
+
+[node name="tile_29" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(160, -320)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 9.73425
+time_tile_next = 0.334536
+
+[node name="tile_30" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(160, -352)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 10.0688
+time_tile_next = 0.319082
+
+[node name="tile_31" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(192, -352)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 10.3879
+time_tile_next = 0.355956
+
+[node name="tile_32" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(192, -384)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 10.7438
+time_tile_next = 0.302987
+
+[node name="tile_33" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(224, -384)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 11.0468
+time_tile_next = 0.345085
+
+[node name="tile_34" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(224, -416)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 11.3919
+time_tile_next = 0.30848
+
+[node name="tile_35" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(256, -416)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 11.7004
+time_tile_next = 0.365106
+
+[node name="tile_36" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(256, -448)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.0655
+time_tile_next = 0.290409
+
+[node name="tile_37" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(288, -448)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.3559
+time_tile_next = 0.346068
+
+[node name="tile_38" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(288, -480)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.702
+time_tile_next = 0.314093
+
+[node name="tile_39" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(320, -480)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 13.0161
+time_tile_next = 0.36882
+
+[node name="tile_40" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(320, -512)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 13.3849
+time_tile_next = 0.325983
+
+[node name="tile_41" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(352, -512)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 13.7109
+time_tile_next = 0.351877
+
+[node name="tile_42" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(352, -544)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 14.0627
+time_tile_next = 0.318198
+
+[node name="tile_43" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(384, -544)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 14.3809
+time_tile_next = 0.35128
+
+[node name="tile_44" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(384, -576)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 14.7322
+time_tile_next = 0.289819
+
+[node name="tile_45" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(416, -576)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 15.022
+time_tile_next = 0.347705
+
+[node name="tile_46" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(416, -608)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 15.3697
+time_tile_next = 0.315055
+
+[node name="tile_47" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(448, -608)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 15.6848
+time_tile_next = 0.359458
+
+[node name="tile_48" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(448, -640)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 16.0443
+time_tile_next = 0.303511
+
+[node name="tile_49" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(480, -640)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 16.3478
+time_tile_next = 0.358983
+
+[node name="tile_50" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(480, -672)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 16.7067
+time_tile_next = 0.315163
+
+[node name="tile_51" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(512, -672)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 17.0219
+time_tile_next = 0.359078
+
+[node name="tile_52" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(512, -704)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 17.381
+time_tile_next = 0.309866
+
+[node name="tile_53" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(544, -704)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 17.6909
+time_tile_next = 0.336995
+
+[node name="tile_54" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(544, -736)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.0278
+time_tile_next = 0.336924
+
+[node name="tile_55" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(576, -736)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.3648
+time_tile_next = 0.358904
+
+[node name="tile_56" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(576, -768)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.7237
+time_tile_next = 0.318208
+
+[node name="tile_57" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(608, -768)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 19.0419
+time_tile_next = 0.354939
+
+[node name="tile_58" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(608, -800)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 19.3968
+time_tile_next = 0.331941
+
+[node name="tile_59" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(640, -800)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 19.7288
+time_tile_next = 0.327736
+
+[node name="tile_60" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(640, -832)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 20.0565
+time_tile_next = 0.309088
+
+[node name="tile_61" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(672, -832)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 20.3656
+time_tile_next = 0.34901
+
+[node name="tile_62" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(672, -864)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 20.7146
+time_tile_next = 0.317228
+
+[node name="tile_63" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(704, -864)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 21.0318
+time_tile_next = 0.392905
+
+[node name="tile_64" type="Sprite2D" parent="Levels/hours_gone_forever_107207" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(704, -896)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 21.4247
+
+[node name="camptown_races_2_826517" type="Node2D" parent="Levels" instance=ExtResource("1_012u4")]
+script = ExtResource("4_f7e0d")
+
+[node name="tile_0" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-320, 128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time_tile_next = 0.311637
+
+[node name="tile_1" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-320, 96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 0.311637
+time_tile_next = 0.35186
+
+[node name="tile_2" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 0.663497
+time_tile_next = 0.376348
+
+[node name="tile_3" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.03984
+time_tile_next = 0.367951
+
+[node name="tile_4" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-320, 64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.4078
+time_tile_next = 0.37588
+
+[node name="tile_5" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-320, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 1.78368
+time_tile_next = 0.407691
+
+[node name="tile_6" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 2.19137
+time_tile_next = 0.728505
+
+[node name="tile_7" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 2.91987
+time_tile_next = 0.375983
+
+[node name="tile_8" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 3.29585
+time_tile_next = 1.15151
+
+[node name="tile_9" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 4.44737
+time_tile_next = 0.327982
+
+[node name="tile_10" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 4.77535
+time_tile_next = 1.1758
+
+[node name="tile_11" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 5.95115
+time_tile_next = 0.359776
+
+[node name="tile_12" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 6.31093
+time_tile_next = 0.343974
+
+[node name="tile_13" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 6.6549
+time_tile_next = 0.361023
+
+[node name="tile_14" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.01592
+time_tile_next = 0.375714
+
+[node name="tile_15" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.39164
+time_tile_next = 0.368152
+
+[node name="tile_16" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 7.75979
+time_tile_next = 0.391634
+
+[node name="tile_17" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 8.15142
+time_tile_next = 0.744172
+
+[node name="tile_18" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 8.8956
+time_tile_next = 0.431337
+
+[node name="tile_19" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 9.32693
+time_tile_next = 0.280066
+
+[node name="tile_20" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-288, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 9.607
+time_tile_next = 0.408808
+
+[node name="tile_21" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-256, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 10.0158
+time_tile_next = 0.36785
+
+[node name="tile_22" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-224, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 10.3837
+time_tile_next = 1.47222
+
+[node name="tile_23" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-192, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 11.8559
+time_tile_next = 0.383233
+
+[node name="tile_24" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-192, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.2391
+time_tile_next = 0.384075
+
+[node name="tile_25" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.6232
+time_tile_next = 0.367852
+
+[node name="tile_26" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 12.991
+time_tile_next = 0.392234
+
+[node name="tile_27" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 13.3833
+time_tile_next = 0.360283
+
+[node name="tile_28" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -256)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 13.7436
+time_tile_next = 0.384343
+
+[node name="tile_29" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -256)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 14.1279
+time_tile_next = 0.783563
+
+[node name="tile_30" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 14.9115
+time_tile_next = 0.320294
+
+[node name="tile_31" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-64, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 15.2318
+time_tile_next = 1.16784
+
+[node name="tile_32" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, -224)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 16.3996
+time_tile_next = 0.352018
+
+[node name="tile_33" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 16.7516
+time_tile_next = 1.15189
+
+[node name="tile_34" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 17.9035
+time_tile_next = 0.375993
+
+[node name="tile_35" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -192)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.2795
+time_tile_next = 0.343745
+
+[node name="tile_36" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.6232
+time_tile_next = 0.368223
+
+[node name="tile_37" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -160)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 18.9915
+time_tile_next = 0.359847
+
+[node name="tile_38" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 19.3513
+time_tile_next = 0.383863
+
+[node name="tile_39" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 19.7352
+time_tile_next = 0.336436
+
+[node name="tile_40" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 20.0716
+time_tile_next = 0.815841
+
+[node name="tile_41" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 20.8874
+time_tile_next = 0.352088
+
+[node name="tile_42" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 21.2395
+time_tile_next = 0.359482
+
+[node name="tile_43" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 21.599
+time_tile_next = 0.384517
+
+[node name="tile_44" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 21.9835
+time_tile_next = 0.399626
+
+[node name="tile_45" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(64, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 22.3832
+time_tile_next = 1.55977
+
+[node name="tile_46" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 23.9429
+time_tile_next = 0.68893
+
+[node name="tile_47" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(32, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 24.6319
+time_tile_next = 0.383353
+
+[node name="tile_48" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 25.0152
+time_tile_next = 0.400236
+
+[node name="tile_49" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(0, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 25.4154
+time_tile_next = 1.54361
+
+[node name="tile_50" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, 32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 26.9591
+time_tile_next = 0.655949
+
+[node name="tile_51" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-32, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 27.615
+time_tile_next = 0.376121
+
+[node name="tile_52" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-64, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 27.9911
+time_tile_next = 0.41684
+
+[node name="tile_53" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-64, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 28.408
+time_tile_next = 1.51905
+
+[node name="tile_54" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 29.927
+time_tile_next = 0.352351
+
+[node name="tile_55" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 30.2794
+time_tile_next = 0.368448
+
+[node name="tile_56" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 30.6478
+time_tile_next = 0.383965
+
+[node name="tile_57" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-96, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 31.0318
+time_tile_next = 0.375978
+
+[node name="tile_58" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -128)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 31.4078
+time_tile_next = 0.359188
+
+[node name="tile_59" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 31.7669
+time_tile_next = 0.408461
+
+[node name="tile_60" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -96)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 32.1754
+time_tile_next = 0.696039
+
+[node name="tile_61" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 32.8714
+time_tile_next = 0.37608
+
+[node name="tile_62" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -64)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 33.2475
+time_tile_next = 0.375924
+
+[node name="tile_63" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-128, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 33.6235
+time_tile_next = 0.392206
+
+[node name="tile_64" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, -32)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 34.0157
+time_tile_next = 0.407471
+
+[node name="tile_65" type="Sprite2D" parent="Levels/camptown_races_2_826517" instance=ExtResource("3_ihupg")]
+modulate = Color(0.823529, 0.533333, 0.823529, 1)
+position = Vector2(-160, 0)
+texture = ExtResource("1_isybe")
+script = ExtResource("6_bovkf")
+time = 34.4231
+
 [node name="Grid" type="Node2D" parent="."]
 
 [node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("okStepsLabel", "errorStepsLabel")]
@@ -879,3 +1932,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PlayerPreviewer" type="Node" parent="." node_paths=PackedStringArray("player", "levels")]
+script = ExtResource("14_l1ug0")
+player = NodePath("../Player")
+levels = NodePath("../Levels")

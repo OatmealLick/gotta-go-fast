@@ -21,6 +21,7 @@ func _ready():
 	levels = get_node("/root/Game/Levels") as Levels
 	levels.level_selected.connect(_on_level_selected)
 	levels.level_reset.connect(_on_level_reset)
+	levels.level_started.connect(_on_level_started)
 	level = levels.get_child(Global.current_level)
 	for t in level.ordered_tiles:
 		t.made_deadly.connect(_on_made_deadly)
@@ -96,10 +97,14 @@ func _on_level_selected():
 	position = initial_position
 
 func _on_level_reset():
+	active = false
 	_set_step(okStepsLabel, 0)
 	_set_step(errorStepsLabel, 0)
 	position = initial_position
-	lives = Global.LivesNumberPerLevel[Global.current_level]
+	lives = Global.LivesNumberPerLevel.get(Global.current_level, Global.DefaultLivesNumberPerLevel)
+
+func _on_level_started():
+	active = true
 
 func _increment_step(label: Label):
 	var current = int(label.text)

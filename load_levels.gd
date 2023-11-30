@@ -14,7 +14,9 @@ func _run():
 	
 	var levels: Node2D = get_scene().get_node("Levels")
 #	_add_to_levels("camptown_races", levels)
-	_add_to_levels("comfort_fit_sorry", levels)
+#	_add_to_levels("comfort_fit_sorry", levels)
+#	_add_to_levels("hours_gone_forever", levels)
+	_add_to_levels("camptown_races_2", levels)
 
 	
 func _add_to_levels(level: String, levels: Node2D):
@@ -65,21 +67,12 @@ func _add_to_levels(level: String, levels: Node2D):
 		tile.set_owner(get_scene())
 		tile.time = current_time
 	
-	# setup level node after tiles are constructed
-#	var tiles: Dictionary = {}
-#	var ordered_tiles: Array = []
 	for i in range(new_level_node.get_child_count()):
 		var c = new_level_node.get_child(i)
 		var tile = c as Tile
 		if i < new_level_node.get_child_count() - 1:
 			var c_next = new_level_node.get_child(i + 1)
 			tile.time_tile_next = c_next.time - c.time
-#		var pos = grid_pos(tile.position)
-		
-#		tiles[pos] = tile
-#		ordered_tiles.append(tile)
-#	new_level_node.tiles = tiles
-#	new_level_node.ordered_tiles = ordered_tiles
 	
 	return new_level_node
 	

@@ -2,8 +2,6 @@ extends Node2D
 
 class_name Level
 
-@export var active := false
-
 @export var tiles: Dictionary = {}
 @export var ordered_tiles: Array = []
 @onready var preview_node: Node2D = $"../../Preview"
@@ -20,7 +18,7 @@ func _ready():
 		ordered_tiles.append(tile)
 		
 func _process(delta):
-	if not active:
+	if not is_active():
 		return
 		
 	if previewing:
@@ -57,3 +55,5 @@ func stop():
 	for c in get_children():
 		(c as Tile).stop()
 	
+func is_active():
+	return get_index() == Global.current_level
